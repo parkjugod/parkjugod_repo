@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <!-- #################################################################### -->
+  <!-- Root Logger -->
+  <!-- #################################################################### -->
+<!--   <root> -->
+    <!-- <priority value="warn" /> -->
+    <!-- <appender-ref ref="console" /> -->
+    <!-- <appender-ref ref="mywish" /> -->
+    <!-- <appender-ref ref="core" /> -->
+    <!-- <appender-ref ref="beans" /> -->
+    <!-- <appender-ref ref="context" /> -->
+    <!-- <appender-ref ref="web" /> -->
+<!--   </root> -->
+  
+  <!-- #################################################################### -->  
+  <!-- Console/File Setting -->
+  <!-- #################################################################### -->  
+  <!-- console -->
+  <appender name="console" class="org.apache.log4j.ConsoleAppender">
+    <param name="Target" value="System.out" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[WEB][%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.StringMatchFilter">
+      <param name="StringToMatch" value="Result" />
+      <param name="AcceptOnMatch" value="false" />
+    </filter>
+  </appender>
+
+  <!-- file : mywish.log -->
+  <appender name="file.dream" class="org.apache.log4j.DailyRollingFileAppender">
+    <!-- Encoding : UTF-8 -->
+    <param name="encoding" value="UTF-8" />
+    <!-- Date pattern -->
+    <param name="DatePattern" value="yyyy-MM-dd" />
+    <!-- file path -->
+  
+<!--     <param name="File" value="/www/web/dream/oam/logs/admin/admin.log" /> -->
+    <param name="File" value="/www/was/tomcat7/logs/b2c.log" />
+    <!-- log pattern -->
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+  </appender>
+  
+  <!-- file : mybatis.log -->
+  <appender name="file.mybatis" class="org.apache.log4j.DailyRollingFileAppender">
+    <!-- Encoding : UTF-8 -->
+    <param name="encoding" value="UTF-8" />
+    <!-- Date pattern -->
+    <param name="DatePattern" value="yyyy-MM-dd" />
+    <!-- file path -->
+<!--     <param name="File" value="/www/web/dream/oam/logs/admin/mybatis.log" /> -->
+    <param name="File" value="/www/was/tomcat7/logs/mybatis.log" />
+    <!-- log pattern -->
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+  </appender>
+  
+  <!-- file : core.log -->
+  <appender name="file.core" class="org.apache.log4j.DailyRollingFileAppender">
+    <!-- Encoding : UTF-8 -->
+    <param name="encoding" value="UTF-8" />
+    <!-- Date pattern -->
+    <param name="DatePattern" value="yyyy-MM-dd" />
+    <!-- file path -->
+<!--     <param name="File" value="/www/web/dream/oam/logs/admin/core.log" /> -->
+    <param name="File" value="/www/was/tomcat7/logs/core.log" />
+    <!-- log pattern -->
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+  </appender>
+
+  <!-- file : beans.log -->
+  <appender name="file.beans" class="org.apache.log4j.DailyRollingFileAppender">
+    <!-- Encoding : UTF-8 -->
+    <param name="encoding" value="UTF-8" />
+    <!-- Date pattern -->
+    <param name="DatePattern" value="yyyy-MM-dd" />
+    <!-- file path -->
+<!--     <param name="File" value="/www/web/dream/oam/logs/admin/beans.log" /> -->
+    <param name="File" value="/www/was/tomcat7/logs/beans.log" />
+    <!-- log pattern -->
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+  </appender>
+
+  <!-- file : context.log -->
+  <appender name="file.context" class="org.apache.log4j.DailyRollingFileAppender">
+    <!-- Encoding : UTF-8 -->
+    <param name="encoding" value="UTF-8" />
+    <!-- Date pattern -->
+    <param name="DatePattern" value="yyyy-MM-dd" />
+    <!-- file path -->
+<!--     <param name="File" value="/www/web/dream/oam/logs/admin/context.log" /> -->
+    <param name="File" value="/www/was/tomcat7/logs/context.log" />
+    <!-- log pattern -->
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+  </appender>
+
+  <!-- file : web.log -->
+  <appender name="file.web" class="org.apache.log4j.DailyRollingFileAppender">
+    <!-- Encoding : UTF-8 -->
+    <param name="encoding" value="UTF-8" />
+    <!-- Date pattern -->
+    <param name="DatePattern" value="yyyy-MM-dd" />
+    <!-- file path -->
+<!--     <param name="File" value="/www/web/dream/oam/logs/admin/web.log" /> -->
+    <param name="File" value="/www/was/tomcat7/logs/web.log" />
+    <!-- log pattern -->
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[WEB][%d{yyMMdd HHmmss}][%-5p][%-20.20c{1}][%-15.15M][%5L]%m%n" />
+    </layout>
+  </appender>
+
+  <!-- #################################################################### -->  
+  <!-- Log Rule -->
+  <!-- #################################################################### -->
+  <!-- com.rocomo.mywish -->  
+  <category name="com.sample" additivity="false">
+    <priority value="debug" />
+    <appender-ref ref="console" />
+    <appender-ref ref="file.dream" />
+  </category>
+  
+
+  
+  <!-- com.ibatis -->  
+  <category name="mybatis" additivity="false">
+    <priority value="debug" />
+    <!-- <appender-ref ref="console" /> -->
+    <appender-ref ref="file.mybatis" />
+  </category>
+  <category name="mybatis.mapper" additivity="false">
+    <priority value="debug" />
+    <appender-ref ref="console" />
+    <appender-ref ref="file.mybatis" />
+  </category>
+
+  <!-- java.sql -->
+  <category name="java.sql" additivity="false">
+    <priority value="debug" />
+    <appender-ref ref="console" />
+    <appender-ref ref="file.dream" />
+  </category>
+  
+  <!-- org.springframework.core -->
+  <category name="org.springframework.core" additivity="false">
+    <priority value="info" />
+    <appender-ref ref="file.core" />
+  </category>
+    
+  <!-- org.springframework.beans -->
+  <category name="org.springframework.beans" additivity="false">
+    <priority value="info" />
+    <appender-ref ref="file.beans" />
+  </category>
+  
+  <!-- org.springframework.context -->
+  <category name="org.springframework.context" additivity="false">
+    <priority value="info" />
+    <appender-ref ref="file.context" />
+  </category>
+  
+  <!-- org.springframework.web -->
+  <category name="org.springframework.web" additivity="false">
+    <priority value="info" />
+    <appender-ref ref="file.web" />
+  </category>
+
+  
+
+</log4j:configuration>
